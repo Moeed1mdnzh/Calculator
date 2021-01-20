@@ -1,19 +1,31 @@
+<Button>
+	font_size: 20
+
+
 <bootUp>
-	phrase:phrase
 	BoxLayout:
 		orientation: 'vertical'
 		size : root.width,root.height
+		canvas.before:
+			Color:
+				rgba : (100/255,100/255,100/255,1)
+			Rectangle:
+				size : self.size 
+				pos : self.pos
 		TextInput:
 			id : phrase
 			multiline: False
 			halign: 'right'
-			font_size: 50
+			font_size: 60
 			background_normal : ''
-			background_color: (40/255,40/255,40/255,1)
+			background_color: (210/255,210/255,210/255,1)
 			size_hint: (1, .40)
+			foreground_color : (60/255,60/255,60/255,1)
+			on_text : root.change_color(self, self.text)
 		GridLayout:
 			cols : 5
 			rows : 7
+			spacing : 5
 			Button:
 				text : "C"
 			Button:
@@ -41,9 +53,9 @@
 			Button:
 				text : "6"
 			Button:
-				text : "C"
+				text : "X"
 			Button:
-				text : "C"
+				text : ")"
 			Button:
 				text : "1"
 			Button:
@@ -51,16 +63,18 @@
 			Button:
 				text : "3"
 			Button:
-				text : "C"
+				text : "-"
 			Button:
-				text : "C"
+				text : "^2"
 			Button:
-				text : "C"
+				text : "0"
 			Button:
-				text : "C"
+				text : "00"
 			Button:
-				text : "C"
+				text : "."
 			Button:
-				text : "C"
+				text : "+"
 			Button:
-				text : "C"
+				text : "="
+				background_normal: ''
+				background_color: (250/255, 119/255, 5/255, 1)

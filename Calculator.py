@@ -10,7 +10,20 @@ Window.size = (500,600)
 Builder.load_file("Design.kv")
 
 class bootUp(Widget):
-	pass
+	def add_sign(self,sign):
+		pass
+
+	def clear_all(self):
+		pass
+
+	def rmv_element(self):
+		pass
+
+	def calculate(self):
+		pass
+
+	def change_color(self,instance,value):
+		instance.foreground_color = (60/255,60/255,60/255,1)
 
 class Calculator(App):
 	def build(self):
