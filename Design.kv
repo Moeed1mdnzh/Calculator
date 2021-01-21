@@ -12,6 +12,7 @@
 			Rectangle:
 				size : self.size 
 				pos : self.pos
+		spacing: 2
 		TextInput:
 			id : phrase
 			multiline: True
@@ -66,13 +67,11 @@
 			Button:
 				text : "9"
 				on_press : root.add_number("9")
-			Button:
+			roundButton2:
 				text : "÷"
-				background_color: (0.8,0.8,0.8, 1)
 				on_press : root.add_sign("÷")
-			Button:
+			roundButton2:
 				text : "("
-				background_color: (0.8,0.8,0.8, 1)
 				on_press : root.add_sign("(")
 			Button:
 				text : "4"
@@ -83,13 +82,11 @@
 			Button:
 				text : "6"
 				on_press : root.add_number("6")
-			Button:
+			roundButton2:
 				text : "x"
-				background_color: (0.8,0.8,0.8, 1)
 				on_press : root.add_sign("x")
-			Button:
+			roundButton2:
 				text : ")"
-				background_color: (0.8,0.8,0.8, 1)
 				on_press : root.add_sign(")")
 			Button:
 				text : "1"
@@ -100,13 +97,11 @@
 			Button:
 				text : "3"
 				on_press : root.add_number("3")
-			Button:
+			roundButton2:
 				text : "-"
-				background_color: (0.8,0.8,0.8, 1)
 				on_press : root.add_sign("-")
-			Button:
+			roundButton2:
 				text : "^2"
-				background_color: (0.8,0.8,0.8, 1)
 				on_press : root.add_sign("^2")
 			Button:
 				text : "0"
@@ -117,12 +112,32 @@
 			Button:
 				text : "."
 				on_press : root.add_sign(".")
-			Button:
+			roundButton2:
 				text : "+"
-				background_color: (0.8,0.8,0.8, 1)
 				on_press : root.add_sign("+")
-			Button:
+			roundButton1:
 				text : "="
-				background_normal: ''
-				background_color: (250/255, 119/255, 5/255, 1)
 				on_press : root.calculate()
+
+
+<roundButton1@Button>
+	background_color: (0, 0, 0, 0)
+	background_normal: ''
+	canvas.before:
+		Color : 
+			rgba : (250/255, 119/255, 5/255, 1)
+		RoundedRectangle:
+			size: self.size 
+			pos : self.pos 
+			radius : [8]
+
+<roundButton2@Button>
+	background_color: (0, 0, 0, 0)
+	background_normal: ''
+	canvas.before:
+		Color : 
+			rgba : (0.3,0.3,0.3, 1)
+		RoundedRectangle:
+			size: self.size 
+			pos : self.pos 
+			radius : [8]

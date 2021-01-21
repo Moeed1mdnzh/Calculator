@@ -36,7 +36,6 @@ class bootUp(Widget):
 		for k,v in filters.items():
 			phrase = phrase.replace(k,v)
 		try:
-			print(phrase)
 			self.ids.phrase.text = str(round(eval(phrase),2))
 		except Exception:
 			self.ids.phrase.text = "[ERROR]"
